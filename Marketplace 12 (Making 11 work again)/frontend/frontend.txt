@@ -1,0 +1,26 @@
+Add credentials: 'include' to the fetch options like below. This will include the cookie with the request.
+
+
+fetch('https://example.com', {
+  mode: 'cors',
+  credentials: 'include'
+})
+
+In React, the import React statement doesn't import everything; it's specifically used for importing the core 
+React library. While it's true that React is a powerful library, it's modular, and you only import the specific 
+parts you need in your components. React follows a modular design to keep the library efficient and allow 
+developers to include only the necessary features in their projects.
+
+By adding the useEffect with an empty dependency array, the fetch 
+requests will only be made once when the component mounts, ensuring 
+that data is logged just once instead of multiple times.
+
+When you use ReactDOM.createRoot, it enables Concurrent Mode, which can result in multiple render passes.
+
+React Concurrent Mode is a feature introduced in React 18 (as of my last knowledge update in September 2021). 
+It's designed to improve the user experience by making React more responsive and efficient, particularly for large 
+and complex applications. Concurrent Mode introduces the concept of "time slicing," allowing React to work on 
+multiple tasks simultaneously.
+
+ReactDOM.createRoot is a function provided by React that you can use to create a root instance for Concurrent Mode. 
+It allows you to render components in a mode that supports concurrent rendering and time slicing.

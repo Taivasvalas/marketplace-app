@@ -1,0 +1,21 @@
+- Installations:
+npm init -y
+npm install express
+npm install cors
+npm i EJS
+npm i --save-dev nodemon
+npm i stripe
+npm i dotenv
+npm install -g ngrok
+npm install express-session
+npm install node-fetch /// ei ehkä tarviutsekaan
+
+ngrok http 80 = start a tunnel
+
+// ngrok usage
+
+(redirectaa stripe backendille, joka on nykyään localhost:8081. Alla on myös kirjoitusvirheitä. En uskalla muuttaa/ en jaksa)
+Pass the ngrok http 8080 forwarding url to stripe webhook. It redirects to http:localhost:808. You can add routes, like webhook-account-created, to the end of the ngrok url.
+(käytän kai ngrok 8081 Stripe backendille, koska backendWebsite pyörii 8080)
+
+

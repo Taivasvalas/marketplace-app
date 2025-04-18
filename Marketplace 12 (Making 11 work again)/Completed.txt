@@ -1,0 +1,63 @@
+- Voi luoda käyttäjän
+- Voi kirjautua sisään käyttäjälle
+- Voi "Log out"
+- Napit katoaa, jos ei syytä näkyä.
+- Salasanat cryptoituu
+- Voi valita, pysyykö kirjautuneena
+- Jos ei "Stay logged in", sessio resets after browser closed.
+- Stripe yhdistetty tähän projektiin.
+- Käyttäjä voi lisätä kuvan tuotteesta ja antaa sille hinnan ja descriptionin ja omat yhteystiedot.
+- Käyttäjä voi rekisteröityä myyjäksi vain jos on kijrautuneena.
+- Käyttäjä voi myydä tuotteita (SELL nappi) vain jos on rekisteröitynyt myyjäksi.
+- Raha menee tuotteen myyntiin laittaneen stripe tilille
+- Myyjät näkevät oman stripe dashboardin.
+
+
+- Valmis? (Marketplace 10, 10.1 ja 11)
+- Kuin tori.fi
+
+
+
+
+
+
+Extra (Lisätty Marketplace 11):
+
+- Poistin Marketplace 11 versiosta turhia asioita, mitä löysin (console.log (jotka näkyisi selaimessa käyttäjälle) ja form views)
+    - Poistetut:
+
+        Backend_Stripe:
+            - views/login.ejs
+            - Public turhat tuotekuvat
+            - Poistan vain ne console.log, jotka näkyvät selaimessa (Stripe Backendissä ei kai mitään)
+
+
+        Backend_Website:
+            - views/Login.ejs  (Form hoidetaan frontendissä nykyään)
+            - index.js ("/Login" endpoint)    (Nykyään form hoidetaan frontendissä ja ne tiedot lähetetään suoraan "/Login/Use-Form-Data")
+            app.get('/Login', (req, res) => {
+                console.log("\n\n/Login");
+                res.render("Login");
+            })
+            - views/RegisterForm.ejs (Form hoidetaan frontendissä nykyään)
+            - index.js ("/Register-New-Account" endpoint)    (Nykyään form hoidetaan frontendissä ja ne tiedot lähetetään suoraan "/Register-New-Account/Use-Form-Data")
+            app.get('/Register-New-Account', (req, res) => {
+                console.log("\n\n/Register-New-Account");
+                res.render("RegisterForm");
+            })
+            - Poistan vain ne console.log, jotka näkyvät selaimessa (Website Backendissä ei kai mitään)
+
+
+        Frontend:
+            - Poistan (Muutan kommenteiksi) vain ne console.log, jotka näkyvät selaimessa (Frontendissä kai kaikki). Poikkeus: Error console.logit (esim: .catch((error) => console.log("Error:", error));)
+
+                - Stripe React Files:
+                    - Muutin kaikki, ei error, console.log kommenteiksi
+                    - Poistin UploadFileCopy.js filen (löytää aikaisemmista versioista. Nykyinen: Marketplace 11 (No unnecessary))
+
+
+                - Website React Files:
+                    - Muutin kaikki, ei error, console.log kommenteiksi
+                    - RenderAccounts.js voisi ehkä poistaa, mutta joskus tuli bugeja kun poistin, joten en turhaan jaksa
+
+

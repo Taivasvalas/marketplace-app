@@ -1,0 +1,53 @@
+Mene Stripen webhookkeihin ja muuta ngrok http 8081 avulla se url, jonne webhook ilmoitus lähetetään.
+Käytän tätä webhookkia: Account-creation-webhooks.
+Tässä nimi:
+https://7d6f-2001-14ba-6c23-8f00-6c4a-ec6b-26f8-b8e6.ngrok-free.app/webhook-account-created
+Toi alku pitää muuttaa ngrokin avulla. Muuta tämä osa: 
+https://7d6f-2001-14ba-6c23-8f00-6c4a-ec6b-26f8-b8e6.ngrok-free.app
+
+Ngrok antaa url, joka ohjaa suoraan http//:localhost:8081
+Tuo osa on nyt tämä: https://7d6f-2001-14ba-6c23-8f00-6c4a-ec6b-26f8-b8e6.ngrok-free.app
+
+Loppu jää silleen kuin on: /webhook-account-created
+
+Nyt se on kuin 
+http://localhost:8081/webhook-account-created
+Mutta alku on vaan https (tarvittava http sijaan stripessä):
+https://7d6f-2001-14ba-6c23-8f00-6c4a-ec6b-26f8-b8e6.ngrok-free.app
+
+Tuo ylempi siis muuttuu aina kun haluat. Sitä pitää uusia välillä backendissä backend_Stripen terminaalissa. se 8081 juokseva backend.
+Kirjoita vain:
+"ngrok http 8081"
+Se avaa ngrok paneelin. Kopioi siitä url joka alkaa https
+
+
+
+
+
+
+(Alempi asennus on nyt KAI poistettu)
+npm install -g localtunnel
+Joku chat gbt juttu:
+"
+Localtunnel is a service that allows you to expose your locally hosted web server to the public internet through a secure tunnel. This can be useful for various purposes, such as testing web applications or providing temporary access to a local development environment.
+
+Here's a step-by-step guide on how to use localtunnel:
+
+Install localtunnel: First, you need to install localtunnel globally on your system. You can do this using npm (Node Package Manager) by running the following command in your terminal or command prompt:
+bash
+Copy code
+npm install -g localtunnel
+This command will install localtunnel globally, making it available as a command-line tool.
+
+Start your server: Ensure that your local server is running on the port you want to expose. For example, if your server is running on port 8080, make sure it's active and ready to accept incoming connections.
+
+Create a tunnel: Once your server is running, you can create a tunnel using the lt command followed by the port number you want to expose. For example, to expose port 8080, you would run the following command:
+
+bash
+Copy code
+lt --port 8080
+This command will initiate a tunnel and generate a unique URL (e.g., https://abc123.localtunnel.me) that forwards traffic from the specified local port to the public internet.
+
+With the tunnel created, you can now share the generated URL with others, allowing them to access your locally hosted web server over the internet. Keep in mind that localtunnel URLs are temporary and will expire after a period of inactivity, so they're ideal for short-term use cases like testing and demonstrations."
+
+HUOM! Poistin KAI localtunnelin globaalisti koneelta: npm uninstall -g localtunnel 

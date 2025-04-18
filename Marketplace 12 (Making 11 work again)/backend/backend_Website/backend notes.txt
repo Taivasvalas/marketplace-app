@@ -1,0 +1,104 @@
+npm init -y
+
+package.json
+
+npm install express
+
+package-lock.json
+express.js
+
+npm install cors
+cors allows to send http request fron different URL origins
+
+your server should now include the Access-Control-Allow-Origin 
+header in its responses, allowing your frontend application to 
+make CORS requests to the server without encountering CORS-related errors.
+
+npm i ejs
+- Downloads ejs. Most simular to html.
+- Our view engine.
+- EJS allows you to include JavaScript code within your HTML or template files.
+- nice thing about using server to output views is that you can actually run your
+    server code to generate the code inside of your views. Pass data into view file.
+
+donwload EJS language support
+- get syntax highlighting for ejs.
+
+npm i --save-dev nodemon
+- Allows us to restart our server easily anytime we make changes.
+- Otherwise you have to close it and restart manually.
+- Saved as dev dependency.
+- Re-runs server.js file. (after you save)
+
+npm i express bcrypt
+- installs bcrypt for crypting data
+
+
+  "scripts": {
+    "devStart" : "nodemon server.js"
+  }
+  - script called devstart. It runs command called nodemon. We call the command with our file called server.js.
+  - Restarts server automatically.
+
+  npm run devStart
+  - Runs all of the code inside server.js, because of devStart we created.
+
+
+Marketplace notes for backend:
+
+  Notes for backend folder:
+
+Random: 
+
+- Get requests happens, when someone navigate to specified url.
+
+- The choice of naming the file "config.js" is a common convention used in web 
+    development for files that contain configuration settings and variables. 
+
+
+
+Installions:
+
+npm init -y
+- Teki package.json, minne asennetaan libraries.
+
+npm i express
+- Main library. Installs express library.
+- Teki package-lock.json.
+- Teki node_modules.
+
+npm install express-session
+- Allows you to use sessions
+
+npm i --save-dev nodemon
+- Allows us to restart our server easily anytime we make changes.
+- Otherwise you have to close it and restart manually.
+- Saved as dev dependency.
+- Re-runs server.js file. (after you save)
+
+npm i ejs
+- Downloads ejs. Most simular to html.
+- Our view engine.
+- EJS allows you to include JavaScript code within your HTML or template files.
+- nice thing about using server to output views is that you can actually run your
+    server code to generate the code inside of your views. Pass data into view file.
+
+donwload EJS language support
+- get syntax highlighting for ejs.
+
+Codes:
+
+package.json:
+  ennemmin:
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+  nyt:
+  "scripts": {
+    "devStart" : "nodemon server.js"
+  }
+  - script called devstart. It runs command called nodemon. We call the command with our file called server.js.
+  - Restarts server automatically.
+
+  npm run devStart
+  - Runs all of the code inside server.js, because of devStart we created.

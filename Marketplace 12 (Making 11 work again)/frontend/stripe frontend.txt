@@ -1,0 +1,14 @@
+This text was copied from Stripe shop nrp. 4 (Info Prefilled) folder inside my codes/stripe Tests
+This text was in the frontend directory that contains the react folder also.
+
+
+- Installations:
+npx create-react-app react-app
+npm install --save-dev @babel/plugin-proposal-private-property-in-object
+npm install --save @babel/core @babel/preset-env
+
+(Installed babel thing in my-react-app folder)
+
+
+FYI:
+- If you want to render a react component (in this case inside index.js), it has to have a name that starts with a uppercase letter.

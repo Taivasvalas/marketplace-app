@@ -1,0 +1,67 @@
+This text was copied from Stripe shop nrp. 4 (Info Prefilled) folder inside my codes/stripe Tests
+This text was in the root directory that contains this file and also backend and frontend folder
+
+
+
+Tutorial: 
+https://www.youtube.com/watch?v=1r-F3FIONl8
+
+
+Test payment: 
+Use 424242424242 as card number for test payments.
+Anything for name and email.
+MM/YY = anything in the future.
+Any CVS.
+Any ZIP code
+
+
+
+Error encountered: 
+Asked from Chat GBT and it answered: 
+
+why i get this? webpack compiled successfully
+One of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it may break at any time.
+
+babel-preset-react-app is part of the create-react-app project, which
+is not maintianed anymore. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.
+
+
+ChatGPT
+The warning you're seeing indicates that there's an issue with a dependency, babel-preset-react-app, which is a part of the create-react-app project. The warning suggests that this package is importing @babel/plugin-proposal-private-property-in-object without declaring it in its dependencies.
+
+To resolve this warning, you should add @babel/plugin-proposal-private-property-in-object to your project's devDependencies. This way, it will be explicitly listed in your package.json file, and you won't rely on it being available through unrelated dependencies.
+
+Here's how you can do it using npm:
+
+bash
+Copy code
+npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
+After running one of these commands, you should see the package added to your devDependencies in your package.json file.
+
+
+// package.json
+{
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^1.0.0"
+    // other devDependencies...
+  }
+}
+By doing this, you are explicitly stating that your project relies on this package, and it should resolve the warning you're currently encountering.
+
+
+
+
+
+Done: 
+- Sellers can onboard
+- Metadata about created accounts is retrieved using webhooks. It can be used to identif wich user created the account (also whose account data to update to "Onboarded = true")
+- Most of the extra unnecessary text/code deleted
+- From transactions the money goes to one of the onboarded sellers specified in backend. Some money comes to my account (platform fee).
