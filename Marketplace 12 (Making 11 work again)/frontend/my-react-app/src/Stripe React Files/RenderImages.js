@@ -13,7 +13,7 @@ const RenderImages = () => {
         const response = await fetch(`${BASE_URL81}/get-items`);
         const data = await response.json();
         setItems(data);
-        // console.log("\n\ndataaaaaaaaa nyt OIKEESTII TÄREKÄ\n: ",data)
+        console.log("\n\ndataaaaaaaaa nyt OIKEESTII TÄREKÄ\n: ",data)
       } catch (error) {
         console.error('Error fetching items:', error);
       }
